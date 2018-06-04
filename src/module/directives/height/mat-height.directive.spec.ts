@@ -1,10 +1,10 @@
 import {MatHeightDirective} from './mat-height.directive';
-import {WidthAndHeightCSSValidatorService} from '../../service/width-and-height-cssvalidator.service';
+import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit-validator.service';
 
 describe('MatHeightDirective', () => {
   it('should create an instance', () => {
-    const cssValidator: WidthAndHeightCSSValidatorService = new WidthAndHeightCSSValidatorService();
-    const directive = new MatHeightDirective(cssValidator);
+    const cssUnitValidator: CssUnitValidatorService = new CssUnitValidatorService();
+    const directive = new MatHeightDirective(cssUnitValidator);
     expect(directive).toBeTruthy();
   });
 });

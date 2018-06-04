@@ -1,0 +1,35 @@
+{
+  "generator-ngx-library": {
+    "version": "6.0.0",
+    "authorName": "Anthony Nahas",
+    "authorEmail": "anthony.na@hotmail.de",
+    "githubUsername": "angular-material-extensions",
+    "githubRepoName": "layout",
+    "projectName": "@angular-material-extensions/layout",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Set of angular directives that allow developers to boost and easy enhance their app development's layout",
+    "projectKeywords": [
+      "angular",
+      "layout",
+      "directives"
+    ],
+    "ngVersion": "6.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "otherDependencies": [],
+    "additionalPackageFiles": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "mat",
+    "testingFramework": "jest",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": [
+      "config/karma.conf.js",
+      "config/webpack.test.js",
+      "config/karma-test-shim.js"
+    ]
+  }
+}

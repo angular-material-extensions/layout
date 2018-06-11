@@ -1,5 +1,4 @@
 import {Directive, Host, HostBinding, Input, OnInit} from '@angular/core';
-import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit-validator.service';
 
 @Directive({
   selector: ''
@@ -10,13 +9,13 @@ import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit
 export class MatWidthDirective implements OnInit {
 
   @Input()
-  matWidth: number | string;
+  matWidth: string;
 
   @Input()
-  matMinWidth: number | string;
+  matMinWidth: string;
 
   @Input()
-  matMaxWidth: number | string;
+  matMaxWidth: string;
 
   @HostBinding('style.width')
   width: string;
@@ -28,14 +27,11 @@ export class MatWidthDirective implements OnInit {
   @HostBinding('style.max-width')
   maxWidth: string;
 
-  constructor(@Host() private cssUnitValidator: CssUnitValidatorService) {
-  }
-
   ngOnInit(): void {
 
-    this.width = this.cssUnitValidator.validate(this.matWidth);
-    this.minWidth = this.cssUnitValidator.validate(this.matMinWidth);
-    this.maxWidth = this.cssUnitValidator.validate(this.matMaxWidth);
+    this.width = this.matWidth;
+    this.minWidth = this.matMinWidth;
+    this.maxWidth = this.matMaxWidth;
 
   }
 

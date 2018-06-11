@@ -1,6 +1,6 @@
 
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TransferHttpCacheModule } from '@nguniversal/common';
@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppSharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 @NgModule({
     declarations: [
@@ -20,11 +23,13 @@ import { AppComponent } from './app.component';
         // the page.
         BrowserModule.withServerTransition({ appId: '@angular-material-extensions/layout-demo-id' }),
         TransferHttpCacheModule,
+        FlexLayoutModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         AppRoutingModule,
         AppSharedModule,
-        HomeModule
+        HomeModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

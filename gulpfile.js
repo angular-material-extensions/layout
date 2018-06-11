@@ -322,7 +322,7 @@ gulp.task('npm-package', (cb) => {
   // copy the needed additional files in the 'dist' folder
   pump(
     [
-      gulp.src(['README.md', 'LICENSE', 'CHANGELOG.md', 
+      gulp.src(['README.md', 'LICENSE', 'CHANGELOG.md',
       `${config.buildDir}/lib-es5/**/*.d.ts`,
       `${config.buildDir}/lib-es5/**/*.metadata.json`]),
       gulpFile('package.json', JSON.stringify(targetPkgJson, null, 2)),
@@ -343,7 +343,7 @@ gulp.task('rollup-bundle', (cb) => {
       // the window object.
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals for more.
 
-      // Angular dependencies 
+      // Angular dependencies
       '@angular/core': 'ng.core',
       '@angular/common': 'ng.common',
 
@@ -372,7 +372,7 @@ gulp.task('rollup-bundle', (cb) => {
       // Add any other dependency or peer dependency of your library here
       // This is required for UMD bundle users.
       // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
-      
+
 
     };
     const rollupBaseConfig = {
@@ -389,7 +389,7 @@ gulp.task('rollup-bundle', (cb) => {
           include: ['node_modules/rxjs/**']
         }),
         rollupSourcemaps(),
-        rollupNodeResolve({ 
+        rollupNodeResolve({
           jsnext: true,
           module: true,
           jail: distFolder, // to use final 'package.json' from 'dist/'
@@ -633,10 +633,10 @@ gulp.task('create-new-tag', (cb) => {
 
 // Build and then Publish 'dist' folder to NPM
 gulp.task('npm-publish', ['build'], () => {
-  return execExternalCmd('npm',`publish ${config.outputDir}`)
+  return execExternalCmd('npm', `publish ${config.outputDir} --access public`)
 });
 
-// Perfom pre-release checks (no actual release)
+// Perform pre-release checks (no actual release)
 gulp.task('pre-release', cb => {
   readyToRelease();
   cb();

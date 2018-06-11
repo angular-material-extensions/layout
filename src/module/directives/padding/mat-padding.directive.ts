@@ -1,9 +1,7 @@
-import {Directive, Host, HostBinding, Input, OnInit} from '@angular/core';
-import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit-validator.service';
+import {Directive, HostBinding, Input, OnInit} from '@angular/core';
 
 @Directive({
   selector: ''
-  + '.mat-padding'
   + '[mat-padding],'
   + '[mat-padding-top],'
   + '[mat-padding-bottom],'
@@ -18,19 +16,19 @@ import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit
 export class MatPaddingDirective implements OnInit {
 
   @Input()
-  matPadding: number | string;
+  matPadding: string;
 
   @Input()
-  matPaddingTop: number | string;
+  matPaddingTop: string;
 
   @Input()
-  matPaddingBottom: number | string;
+  matPaddingBottom: string;
 
   @Input()
-  matPaddingLeft: number | string;
+  matPaddingLeft: string;
 
   @Input()
-  matPaddingRight: number | string;
+  matPaddingRight: string;
 
   @HostBinding('style.padding')
   padding: string;
@@ -48,15 +46,12 @@ export class MatPaddingDirective implements OnInit {
   paddingRight: string;
 
 
-  constructor(@Host() private cssUnitValidator: CssUnitValidatorService) {
-  }
-
   ngOnInit(): void {
-    this.padding = this.cssUnitValidator.validate(this.matPadding);
-    this.paddingTop = this.cssUnitValidator.validate(this.matPaddingTop);
-    this.paddingBottom = this.cssUnitValidator.validate(this.matPaddingBottom);
-    this.paddingLeft = this.cssUnitValidator.validate(this.matPaddingLeft);
-    this.paddingRight = this.cssUnitValidator.validate(this.matPaddingRight);
+    this.padding = this.matPadding;
+    this.paddingTop = this.matPaddingTop;
+    this.paddingBottom = this.matPaddingBottom;
+    this.paddingLeft = this.matPaddingLeft;
+    this.paddingRight = this.matPaddingRight;
   }
 
 }

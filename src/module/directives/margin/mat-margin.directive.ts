@@ -1,5 +1,4 @@
-import {Directive, Host, HostBinding, Input, OnInit} from '@angular/core';
-import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit-validator.service';
+import {Directive, HostBinding, Input, OnInit} from '@angular/core';
 
 @Directive({
   selector: ''
@@ -18,19 +17,19 @@ import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit
 export class MatMarginDirective implements OnInit {
 
   @Input()
-  matMargin: number | string;
+  matMargin: string;
 
   @Input()
-  matMarginTop: number | string;
+  matMarginTop: string;
 
   @Input()
-  matMarginBottom: number | string;
+  matMarginBottom: string;
 
   @Input()
-  matMarginLeft: number | string;
+  matMarginLeft: string;
 
   @Input()
-  matMarginRight: number | string;
+  matMarginRight: string;
 
   @HostBinding('style.margin')
   margin: string;
@@ -47,15 +46,12 @@ export class MatMarginDirective implements OnInit {
   @HostBinding('style.margin-right')
   marginRight: string;
 
-  constructor(@Host() private cssUnitValidator: CssUnitValidatorService) {
-  }
-
   ngOnInit(): void {
-    this.margin = this.cssUnitValidator.validate(this.matMargin);
-    this.marginTop = this.cssUnitValidator.validate(this.matMarginTop);
-    this.marginBottom = this.cssUnitValidator.validate(this.matMarginBottom);
-    this.marginLeft = this.cssUnitValidator.validate(this.matMarginLeft);
-    this.marginRight = this.cssUnitValidator.validate(this.matMarginRight);
+    this.margin = this.matMargin;
+    this.marginTop = this.matMarginTop;
+    this.marginBottom = this.matMarginBottom;
+    this.marginLeft = this.matMarginLeft;
+    this.marginRight = this.matMarginRight;
   }
 
 }

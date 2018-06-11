@@ -1,5 +1,4 @@
-import {Directive, Host, HostBinding, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit-validator.service';
+import {Directive, HostBinding, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Directive({
   selector: ''
@@ -10,13 +9,13 @@ import {CssUnitValidatorService} from '../../service/css-unit-validator/css-unit
 export class MatHeightDirective implements OnInit, OnChanges {
 
   @Input()
-  matHeight: number | string;
+  matHeight: string;
 
   @Input()
-  matMinHeight: number | string;
+  matMinHeight: string;
 
   @Input()
-  matMaxHeight: number | string;
+  matMaxHeight: string;
 
   @HostBinding('style.height')
   height: string;
@@ -28,14 +27,11 @@ export class MatHeightDirective implements OnInit, OnChanges {
   @HostBinding('style.max-height')
   maxHeight: string;
 
-  constructor(@Host() private cssUnitValidator: CssUnitValidatorService) {
-  }
-
   ngOnInit(): void {
 
-    this.height = this.cssUnitValidator.validate(this.matHeight);
-    this.minHeight = this.cssUnitValidator.validate(this.matMinHeight);
-    this.maxHeight = this.cssUnitValidator.validate(this.matMaxHeight);
+    this.height = this.matHeight;
+    this.minHeight = this.matMinHeight;
+    this.maxHeight = this.matMaxHeight;
 
   }
 

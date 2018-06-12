@@ -70,7 +70,20 @@ export class OtherModule {
 
 ## Usage
 
+<a name="other-angular-libraries"/>
 
+## Other Angular Libraries
+- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
+- [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
+- [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
+- [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
+- [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
+
+
+---
+
+<a name="license"/>
 
 ## License
 

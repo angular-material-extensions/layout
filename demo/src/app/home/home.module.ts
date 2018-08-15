@@ -4,14 +4,16 @@ import {MatLayoutModule} from '@angular-material-extensions/layout';
 
 import {HomeRoutingModule} from './home-routing.module';
 import {HomeComponent} from './home.component';
-import {MatCardModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {AppSharedModule} from '../shared';
 
 @NgModule({
   imports: [
     CommonModule,
     MatLayoutModule.forRoot(),
+    FlexLayoutModule,
     HomeRoutingModule,
-    MatCardModule,
+    AppSharedModule,
   ],
   providers: [],
   declarations: [HomeComponent],

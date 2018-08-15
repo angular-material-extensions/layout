@@ -1,9 +1,23 @@
 .logo {
-    width: 256px;
-    height: 256px;
-    margin-top: 1.4rem;
+  width: 256px;
+  height: 256px;
+  margin-top: 1.4rem;
+}
+
+.jumbotron {
+  margin-top: 1.0rem;
+
+  h1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
 
 .home {
-    margin-top: 1.0rem;
+  margin-top: 1.0rem;
+}
+
+mat-card {
+  cursor: pointer;
 }

@@ -2,9 +2,9 @@ import {Directive, HostBinding, Input, OnChanges, OnInit, SimpleChanges} from '@
 
 @Directive({
   selector: ''
-  + '[matHeight],'
-  + '[matMinHeight],'
-  + '[matMaxHeight]'
+    + '[matHeight],'
+    + '[matMinHeight],'
+    + '[matMaxHeight]',
 })
 export class MatHeightDirective implements OnInit, OnChanges {
 
@@ -23,19 +23,18 @@ export class MatHeightDirective implements OnInit, OnChanges {
   @HostBinding('style.min-height')
   minHeight: string;
 
-
   @HostBinding('style.max-height')
   maxHeight: string;
 
   ngOnInit(): void {
-
     this.height = this.matHeight;
     this.minHeight = this.matMinHeight;
     this.maxHeight = this.matMaxHeight;
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    // console.log('ngOnChanges: ', changes);
+    // console.log('ngOnChanges: ', changes['matHeight']);
   }
 
 }

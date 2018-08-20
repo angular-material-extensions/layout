@@ -6,6 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serve:prod": "ng serve --prod",
     "build": "ng build",
     "test": "jest",
     "lint": "ng lint",
@@ -28,6 +29,7 @@
     "@angular/platform-server": "^6.0.3",
     "@angular/pwa": "^0.7.3",
     "@angular/router": "^6.0.3",
+    "@angular/service-worker": "^6.0.3",
     "@ng-bootstrap/ng-bootstrap": "2.0.0",
     "bootstrap": "4.1.1",
     "core-js": "^2.5.4",

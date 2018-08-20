@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'utilities',
-    loadChildren: 'app/utilities/utilities.module#UtilitiesModule'
+    loadChildren: './utilities/utilities.module#UtilitiesModule'
   },
   {
     path: 'layouts',

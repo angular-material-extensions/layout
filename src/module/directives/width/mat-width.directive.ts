@@ -1,4 +1,4 @@
-import {Directive, Host, HostBinding, Input, OnInit} from '@angular/core';
+import {Directive, HostBinding, Input, OnInit} from '@angular/core';
 
 @Directive({
   selector: ''
@@ -22,7 +22,7 @@ export class MatWidthDirective implements OnInit {
 
   @HostBinding('style.min-width')
   minWidth: string;
-  
+
   @HostBinding('style.max-width')
   maxWidth: string;
 

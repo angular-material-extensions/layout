@@ -1,8 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
-import {  LibModule  } from '@angular-material-extensions/layout';
+import {HomeComponent} from './home.component';
+import {MatLayoutModule} from '@angular-material-extensions/layout';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,7 +10,7 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        LibModule.forRoot(),],
+        MatLayoutModule.forRoot()],
       declarations: [HomeComponent]
     })
       .compileComponents()

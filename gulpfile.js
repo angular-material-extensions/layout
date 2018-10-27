@@ -525,7 +525,7 @@ gulp.task('serve:demo-ssr',['build:demo-ssr'], () => {
 
 gulp.task('build:demo-prerender', () => {
   return execDemoCmd(`build --preserve-symlinks --prod --base-href /layout/ --deploy-url /layout/`, {cwd: `${config.demoDir}`})
-    .then(() => execDemoCmd(`run ngx-linkifyjs-demo:server`, {cwd: `${config.demoDir}`}))
+    .then(() => execDemoCmd(`run @angular-material-extensions/layout-demo:server`, {cwd: `${config.demoDir}`}))
     .then(() => execCmd('webpack', '--config webpack.server.config.js --progress --colors', {cwd: `${config.demoDir}`}, `/${config.demoDir}`))
     .then(() => execExternalCmd('node', 'prerender.js', {cwd: `${config.demoDir}/dist`}))
     .catch(e => {

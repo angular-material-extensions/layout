@@ -515,8 +515,24 @@ gulp.task('build:demo', () => {
   return execDemoCmd(`build --preserve-symlinks --prod --base-href /layout/ --deploy-url /layout/`, { cwd: `${config.demoDir}`});
 });
 
+gulp.task('serve:demo-prerender', ['serve:demo-prerender'], () => {
+  return execCmd('http-server', {cwd: `${config.demoDir}/dist/browser`});
+});
+
 gulp.task('serve:demo-ssr',['build:demo-ssr'], () => {
   return execExternalCmd('node', 'dist/server.js', { cwd: `${config.demoDir}` });
+});
+
+gulp.task('build:demo-prerender', () => {
+  return execDemoCmd(`build --preserve-symlinks --prod --base-href /layout/ --deploy-url /layout/`, {cwd: `${config.demoDir}`})
+    .then(() => execDemoCmd(`run ngx-linkifyjs-demo:server`, {cwd: `${config.demoDir}`}))
+    .then(() => execCmd('webpack', '--config webpack.server.config.js --progress --colors', {cwd: `${config.demoDir}`}, `/${config.demoDir}`))
+    .then(() => execExternalCmd('node', 'prerender.js', {cwd: `${config.demoDir}/dist`}))
+    .catch(e => {
+      fancyLog(acolors.red(`build:demo-prerender command failed. See below for errors.\n`));
+      fancyLog(acolors.red(e));
+      process.exit(1);
+    });
 });
 
 gulp.task('build:demo-ssr', () => {
@@ -536,6 +552,10 @@ gulp.task('push:demo', () => {
 
 gulp.task('deploy:demo', (cb) => {
   runSequence('build:demo', 'build:doc', 'push:demo', cb);
+});
+
+gulp.task('deploy:demo-prerender', (cb) => {
+  runSequence('build:demo-prerender', 'build:doc', 'push:demo', cb);
 });
 
 
@@ -658,7 +678,7 @@ gulp.task('release', (cb) => {
       'create-new-tag',
       'github-release',
       'npm-publish',
-      'deploy:demo',
+      'deploy:demo-prerender',
       (error) => {
         if (error) {
           fancyLog(acolors.red(error.message));

@@ -132,6 +132,8 @@ export class OtherModule {
 
 ## Usage
 
+Please see the example of the demo app here https://angular-material-extensions.github.io/layout
+
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries

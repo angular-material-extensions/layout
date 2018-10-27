@@ -1,7 +1,7 @@
 {
   "name": "@angular-material-extensions/layout",
   "description": "Set of angular directives that allow developers to boost and easy enhance their app development's layout",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/angular-material-extensions/layout",
   "author": {
     "name": "Anthony Nahas",

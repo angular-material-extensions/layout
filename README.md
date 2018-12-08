@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/angular-material-extensions/layout/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/angular-material-extensions/layout/demo/src/assets/logo.svg">
 </p>
 
 # layout - Set of angular directives that allow developers to boost and easy enhance their app development&#39;s layout
